@@ -14,7 +14,7 @@ const Select = ({ label, value, onChange, children }) => {
         {children}
       </NativeSelect>
       <Filler aria-hidden="true">{displayedValue}</Filler>
-      <SelectIcon id="chevron-down" size="12" />
+      <SelectIcon id="chevron-down" size="24" />
     </Wrapper>
   );
 };
@@ -24,8 +24,7 @@ const Wrapper = styled.div`
   border-radius: 8px;
   padding: 12px 52px 12px 16px;
   color: ${COLORS.gray700};
-  width: min-content;
-  white-space: nowrap;
+  width: max-content;
 
   &:hover {
     color: ${COLORS.black};
@@ -59,7 +58,7 @@ const Filler = styled.span`
 const SelectIcon = styled(Icon)`
   position: absolute;
   pointer-events: none;
-  right: 16px;
+  right: 10px;
   top: 0;
   bottom: 0;
   margin: auto;
