@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { COLORS } from '../../constants';
+import VisuallyHidden from '../VisuallyHidden/VisuallyHidden';
 
 const Variants = {
   large: {
@@ -26,7 +27,7 @@ const Wrapper = styled.div`
   height: ${({ size }) => Variants[size].height}px;
   border-radius: ${({ size }) => Variants[size].borderRadius ?? 4}px;
   background: ${COLORS.transparentGray15};
-  box-shadow: inset 0px 2px 4px rgba(128, 128, 128, 0.35);
+  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
 `;
 
 const BarWrapper = styled.div`
@@ -56,6 +57,7 @@ const ProgressBar = ({ label, value, size }) => {
     size={size}
     progress={value}
   >
+    <VisuallyHidden>{value}%</VisuallyHidden>
     <BarWrapper>
       <Bar />
     </BarWrapper>
